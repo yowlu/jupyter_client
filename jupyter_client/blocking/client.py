@@ -108,7 +108,7 @@ class BlockingKernelClient(KernelClient):
         # Wait for kernel info reply on shell channel
         while True:
             try:
-                msg = self.shell_channel.get_msg(block=True, timeout=1)
+                msg = self.shell_channel.get_msg(block=True, timeout=timeout)
             except Empty:
                 pass
             else:
